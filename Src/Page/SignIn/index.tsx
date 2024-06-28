@@ -3,7 +3,7 @@ import {StyleSheet, View} from 'react-native';
 import {Button, Gap} from '../../components/atoms';
 import {Header, TextInput} from '../../components/molecules';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   return (
     <View style={styles.pageContainer}>
       <Header title="Sign In" />
@@ -16,12 +16,16 @@ const SignIn = () => {
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password" />
         <Gap height={24} />
-        <Button label="Sign In" />
+        <Button
+          label="Sign In"
+          onPress={() => navigation.navigate('HomePage')}
+        />
         <Gap height={12} />
         <Button
           label="Create New Account"
           color="#8D92A3"
           textColor="#FFFFFF"
+          onPress={() => navigation.navigate('SignUp')}
         />
       </View>
     </View>
